@@ -1,9 +1,35 @@
-creating a new database on POSTGRESQL and importing the data from open_messwert
+creating a new database nitratescout and schema 'sachin' on POSTGRESQL and importing the data from open_messwert
 
-create table sachin.open_messstelle (sl_nr int, messstelle_id bigint, pna_id varchar(100),
+create table sachin.open_messwert(sl_nr int, messstelle_id bigint, pna_id varchar(100),
 							 datum_pn Date, stoff_nr int, probengut varchar(100),
 							 messergebnis_c float, messergebnis_hinweis varchar(100),
 							 bestimmungsgrenze varchar(100), masseinheit varchar(100),
 							 trennverfahren varchar(100), verfahren varchar(100),
 							 vor_ort varchar(100), herkunft varchar(100), aktual_dat date,
 							 erstell_dat date)
+
+
+importing the data from katalog_stoff
+
+create table sachin.katalog_stoff(stoff_nr int, name varchar(100), beschreibung varchar(50), cas_id varchar(100) );
+
+Select * from sachin.katalog_stoff;
+
+importing data from open_messstelle
+
+create table sachin.opendata_messstelle(sl_nr int, messstelle_id bigint, name varchar(100),
+			 e32 bigint, n32 bigint, gw_stockwerk int, grundstueck varchar(100),
+			 gemeinde_id varchar(25), gwhorizont_id varchar(10),gwhorizont varchar(25), 
+                         gwleiter varchar(25), einrichtungsgrund varchar(25), gwk_lage_auf_id varchar(25),
+                         gwk_lage_id varchar(25), gwk_monitoring_auf_id varchar(25),
+		         messprogramm varchar(100), turnus_wasserstand varchar(100),freigabe_wstd varchar(25),
+                         freigabe_chemie varchar(100), freigabe_lage varchar(100),wasserstandsmessstelle varchar(100), 
+                         guetemessstelle varchar(100),im_wrrl_messnetz_chemie varchar(100),im_wrrl_messnetz_wasserstand varchar(100),
+			  messstellenart varchar(100), wasserart varchar(100),
+			labor varchar(50), beobachtung_wasserstand varchar(60),
+			eigentuemer varchar(100), betreiber varchar(100),
+			 filterlaenge_cm int,sumpfrohrlaenge_cm int,
+			ausbaudurchmesser_mm int, historischer_ruhe_wsp int, 
+		    einbaulaenge_cm int, oberkante_filter_cm int, unterkante_filter_cm int
+									   );
+
