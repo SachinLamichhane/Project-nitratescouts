@@ -1,0 +1,9 @@
+creating a new database on POSTGRESQL and importing the data from open_messwert
+
+create table sachin.open_messstelle (sl_nr int, messstelle_id bigint, pna_id varchar(100),
+							 datum_pn Date, stoff_nr int, probengut varchar(100),
+							 messergebnis_c float, messergebnis_hinweis varchar(100),
+							 bestimmungsgrenze varchar(100), masseinheit varchar(100),
+							 trennverfahren varchar(100), verfahren varchar(100),
+							 vor_ort varchar(100), herkunft varchar(100), aktual_dat date,
+							 erstell_dat date)
