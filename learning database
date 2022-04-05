@@ -1,1 +1,94 @@
 
+Database information
+
+Table: Katalog_gemeinde
+        Name of community - name
+        id of the community - gemeinde_id : unique number
+ 
+Table: katalog_stoff
+
+        stoff_nr - substance number
+        Name - name of the substance
+        Beschreibung - explanation of the substance
+        
+        Knowing the unique number of the substances that are useful to us
+        Nitrat - 1244
+        Nitrat-stickstoff - 1245
+        Nitrit - 1246
+        Nitrit-stickstoff- 1247
+        
+Table: open_messstelle
+        sl_nr - technical key number : primary key used as foreign key on other tables
+        messstelle_id - unique number  used as foreign key in other tables
+        name- messstelle name- measuring point name
+        e32- location of the east or east co-ordinates
+        N32 - location on the north or north co-ordinates
+        gw_stockwerk: 
+        Grundstück - type of land
+        gemeinde_id - connects with katalog_gemeinde
+        gwhorizont_id - ground water horizon
+        gwhorizont - ground water
+        gwleiter_id - ask tomorrow
+        gwleiter - 
+        einrichtungsgrund - 
+        gwk_lage_auf_id -
+        gwk_lage_id-
+        gwk_monitoring_auf_id-
+        gwk_monitoring_id-
+        messprogramm- measurement programm
+        turnus_wasserstand - regular water cycle
+        freigabe_wstd-
+        freigabe_chemie -
+        freigabe_lage -
+        wasserstandsmessstelle - water level measuring point
+        gütemessstelle - quality measuring point
+        im_wrrl_messnetz_wasserstand - 
+        im_wrrl_messnetz_chemie -
+        messstellenart - measuring point type
+        wasserart - water type
+        labor - laboratory type
+        beobachtung_wassertand - waterlevel observation
+        eigentümer- owner
+        betreiber - operator
+        filterlänge - filter length
+        sumpfrohrlänge - sump pipe length
+        ausbaudurchmesser - removal diameter
+        historischer_ruhe_wsp - 
+        einbaulänge - installation length
+        oberkante filter - top edge filter
+        unterkante filter - lower egde filter
+        
+        
+        
+Table: open_messwert
+
+        messstelle_id - measuring place id.... connects open_messwert
+        pna_id -
+        datum_pn - time and date
+        stoff_nr - substance number
+        probengut - sample good
+        messergebnis_c - measurement result
+        messergebnis_hinweis - measurement result note
+        bestimmungsgrenze - Limit of quantitation
+        masseinheit - unit of measurement
+        trennverfahren - separation process
+        verfahren - procedure
+        herkunft - origin
+        
+        
+ Detailed explanation about the database to understand it easily and extract the datas
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
