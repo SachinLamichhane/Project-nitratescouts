@@ -28,22 +28,22 @@ Table: open_messstelle
         gemeinde_id - connects with katalog_gemeinde
         gwhorizont_id - ground water horizon
         gwhorizont - ground water
-        gwleiter_id - ask tomorrow
-        gwleiter - 
-        einrichtungsgrund - 
-        gwk_lage_auf_id -
+        gwleiter_id - aquifer id
+        gwleiter - aquifer
+        einrichtungsgrund - reason for implementation of messstelle
+        gwk_lage_auf_id - groundwater map
         gwk_lage_id-
         gwk_monitoring_auf_id-
         gwk_monitoring_id-
         messprogramm- measurement programm
-        turnus_wasserstand - regular water cycle
-        freigabe_wstd-
-        freigabe_chemie -
-        freigabe_lage -
+        turnus_wasserstand - regular water cycle frequency
+        freigabe_wstd- availability of  water level datas
+        freigabe_chemie - chemistry datas
+        freigabe_lage - position of well
         wasserstandsmessstelle - water level measuring point
         gütemessstelle - quality measuring point
-        im_wrrl_messnetz_wasserstand - 
-        im_wrrl_messnetz_chemie -
+        im_wrrl_messnetz_wasserstand - measuring point waterframework directive(waterlevel)
+        im_wrrl_messnetz_chemie - measuring point waterframework directive(chemistry)
         messstellenart - measuring point type
         wasserart - water type
         labor - laboratory type
@@ -63,7 +63,7 @@ Table: open_messstelle
 Table: open_messwert
 
         messstelle_id - measuring place id.... connects open_messwert
-        pna_id -
+        pna_id - sampling id
         datum_pn - time and date
         stoff_nr - substance number
         probengut - sample good
