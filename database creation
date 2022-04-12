@@ -1,4 +1,4 @@
-creating a new database nitratescout and schema 'sachin' on POSTGRESQL and importing the data from open_messwert
+creating a new database nitratescout and schema 'public' on POSTGRESQL and importing the data from open_messwert
 
 create table sachin.open_messwert(sl_nr int, messstelle_id bigint, pna_id varchar(100),
 							 datum_pn Date, stoff_nr int, probengut varchar(100),
@@ -11,13 +11,13 @@ create table sachin.open_messwert(sl_nr int, messstelle_id bigint, pna_id varcha
 
 importing the data from katalog_stoff
 
-create table sachin.katalog_stoff(stoff_nr int, name varchar(100), beschreibung varchar(50), cas_id varchar(100) );
+create table katalog_stoff(stoff_nr int, name varchar(100), beschreibung varchar(50), cas_id varchar(100) );
 
-Select * from sachin.katalog_stoff;
+Select * from katalog_stoff;
 
 importing data from open_messstelle
 
-create table sachin.opendata_messstelle(sl_nr int, messstelle_id bigint, name varchar(100),
+create table opendata_messstelle(sl_nr int, messstelle_id bigint, name varchar(100),
 			 e32 bigint, n32 bigint, gw_stockwerk int, grundstueck varchar(100),
 			 gemeinde_id varchar(25), gwhorizont_id varchar(10),gwhorizont varchar(25), 
                          gwleiter varchar(25), einrichtungsgrund varchar(25), gwk_lage_auf_id varchar(25),
@@ -32,4 +32,51 @@ create table sachin.opendata_messstelle(sl_nr int, messstelle_id bigint, name va
 			ausbaudurchmesser_mm int, historischer_ruhe_wsp int, 
 		    einbaulaenge_cm int, oberkante_filter_cm int, unterkante_filter_cm int
 									   );
+									   
+									   
+select a.messstelle_id, a.datum_pn, a.stoff_nr, a.messergebnis_c, a.messergebnis_hinweis,
+a.messergebnis_cm, c.geom , d.gemeinde_id, d.name from open_messwert as a
+right join open_messstelle as c on
+ a.messstelle_id = c.messstelle_id
+ right join katalog_gemeinde as d on
+ d.gemeinde_id = c.gemeinde_id
+ right join katalog_stoff as b on
+ a.stoff_nr = b.stoff_nr
+ where a.stoff_nr = 1245
+ order by c.messstelle_id ASC;// only nitrate sticskstoff table
+
+select a.messstelle_id, a.datum_pn, a.stoff_nr, a.messergebnis_c, a.messergebnis_hinweis,
+a.messergebnis_cm, c.geom , d.gemeinde_id, d.name from open_messwert as a
+right join open_messstelle as c on
+ a.messstelle_id = c.messstelle_id
+ right join katalog_gemeinde as d on
+ d.gemeinde_id = c.gemeinde_id
+ right join katalog_stoff as b on
+ a.stoff_nr = b.stoff_nr
+ where a.stoff_nr = 1244
+ order by c.messstelle_id ASC;// only nitrate table 
+
+
+select a.messstelle_id, a.datum_pn, a.stoff_nr, a.messergebnis_c, a.messergebnis_hinweis,
+a.messergebnis_cm, c.geom , d.gemeinde_id, d.name from open_messwert as a
+right join open_messstelle as c on
+ a.messstelle_id = c.messstelle_id
+ right join katalog_gemeinde as d on
+ d.gemeinde_id = c.gemeinde_id
+ right join katalog_stoff as b on
+ a.stoff_nr = b.stoff_nr
+ where a.stoff_nr = 1246
+ order by c.messstelle_id ASC; // only nitrit table
+
+select a.messstelle_id, a.datum_pn, a.stoff_nr, a.messergebnis_c, a.messergebnis_hinweis,
+a.messergebnis_cm, c.geom , d.gemeinde_id, d.name,c.e32,c.n32 from open_messwert as a
+right join open_messstelle as c on
+ a.messstelle_id = c.messstelle_id
+ right join katalog_gemeinde as d on
+ d.gemeinde_id = c.gemeinde_id
+ right join katalog_stoff as b on
+ a.stoff_nr = b.stoff_nr
+ where a.stoff_nr = 1244
+ order by c.messstelle_id ASC; // concentration of nitrate for shape files
+
 
