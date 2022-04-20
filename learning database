@@ -33,7 +33,7 @@ Table: open_messstelle
         einrichtungsgrund - reason for implementation of messstelle
         gwk_lage_auf_id - groundwater map
         gwk_lage_id- groundwater map id
-        gwk_monitoring_auf_id-
+        gwk_monitoring_auf_id- monitoring id
         gwk_monitoring_id-
         messprogramm- measurement programm
         turnus_wasserstand - regular water cycle frequency
