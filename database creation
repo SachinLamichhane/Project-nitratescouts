@@ -78,5 +78,19 @@ right join open_messstelle as c on
  a.stoff_nr = b.stoff_nr
  where a.stoff_nr = 1244
  order by c.messstelle_id ASC; // concentration of nitrate for shape files
+ 
+ select a.messstelle_id,d.gemeinde_id, d.name, a.datum_pn, a.stoff_nr, a.messergebnis_c,a.masseinheit, a.messergebnis_hinweis, c.gw_stockwerk, c.grundstueck, c.gwhorizont,c.gwleiter,
+c.gwk_lage_id,c.gwk_monitoring_id,c.turnus_wasserstand,c.wasserstandsmessstelle,c.guetemessstelle,c.beobachtung_wasserstand, c.betreiber,
+c.filterlaenge_cm, c.ausbaudurchmesser_mm,c.historischer_ruhe_wsp,c.oberkante_filter_cm, a.probengut,a.verfahren,
+a.messergebnis_cm from open_messwert as a
+right join open_messstelle as c on
+ a.messstelle_id = c.messstelle_id
+ right join katalog_gemeinde as d on
+ d.gemeinde_id = c.gemeinde_id
+ right join katalog_stoff as b on
+ a.stoff_nr = b.stoff_nr
+ where a.stoff_nr = 1244
+ order by c.messstelle_id ASC //useful things about nitrate for our project. 
+
 
 
