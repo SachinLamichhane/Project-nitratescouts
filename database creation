@@ -93,4 +93,8 @@ right join open_messstelle as c on
  order by c.messstelle_id ASC //useful things about nitrate for our project. 
 
 
+select name, messergebnis_c, datum_pn from nitrate_usefull
+where name like 'Kleve' and messergebnis_c > 50.0
+order by datum_pn // sorting the kleve data points
+
 
