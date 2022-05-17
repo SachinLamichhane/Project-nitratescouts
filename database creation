@@ -97,4 +97,7 @@ select name, messergebnis_c, datum_pn from nitrate_usefull
 where name like 'Kleve' and messergebnis_c > 50.0
 order by datum_pn // sorting the kleve data points
 
+select name, messergebnis_c, datum_pn, messstelle_id from nitrate_usefull
+where name like 'Kleve' and messstelle_id = 80200758
+order by datum_pn
 
